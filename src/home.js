@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from './firestorm_logo.png';
 import './index.css';
 
 export class Home extends React.Component {
@@ -8,20 +8,11 @@ export class Home extends React.Component {
   }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+      <div class = "header">
+        <header>
+          <img id="Home_logo" src={logo} alt = "Firestorm Logo" />
+          <h1 id="Firestorm_name">Firestorm</h1>
+          <button type="button" id="Log_In">Log In</button>
         </header>
       </div>
     );

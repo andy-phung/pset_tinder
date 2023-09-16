@@ -12,15 +12,42 @@ code {
     monospace;
 }
 
-.App {
+.header {
+  /* display: flex; */
+  padding-top: 30px;
+  padding-left: 55px;
+  padding-right: 100px;
+}
+
+
+#Home_logo {
+  float: left;
+  vertical-align: middle;
+  padding-top: 10px;
+  width: 70px;
+  height: 70px;
+}
+
+#Firestorm_name {
+  display: inline-block;
+  padding-top: 0px;
+  font-size: 40px;
+}
+
+#Log_In {
+  float: right;
+  border-radius: 25px;
+  background: #73AD21;
+  padding: 0;
+  width: 130px;
+  height: 40px;
+  font-size: 20px;
   text-align: center;
+  margin: 40px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
+/* 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -49,4 +76,4 @@ code {
   to {
     transform: rotate(360deg);
   }
-}
+} */
