@@ -12,7 +12,13 @@ export class Home extends React.Component {
         <header>
           <img id="Home_logo" src={logo} alt = "Firestorm Logo" />
           <h1 id="Firestorm_name">Firestorm</h1>
-          <button type="button" id="Log_In">Log In</button>
+          <button type="button" id="Log_In"><b>Log In</b></button>
+          <p id="Tagline"><b>Burn through psets. Together.</b></p>
+          <center>
+            <button type="button" id="Create_Account">
+              <b>Create Account</b>
+            </button>
+          </center>
         </header>
       </div>
     );
