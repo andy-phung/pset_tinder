@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { ReactDOM, createRoot } from "react-dom/client";
+import './index.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { 
+  Routes, 
+  Route, 
+  Outlet, 
+  Link, 
+  BrowserRouter
+  } from "react-router-dom";
+
+import { Login } from "./login"
+import { Account } from "./account"
+import { Home } from "./home"
+import { Main } from "./main"
+import { NavBar, NotFound } from "./util"
+
+  
+export default class App extends React.Component { 
+  constructor(props) {
+    super(props);
+    this.app = React.createRef();
+  }
+
+  render() {
+    return (
+      <div ref={this.app} className="App">
+          <Routes>
+            <Route path="/" element={ <NavBar/> }>
+              <Route index element={ <Home/> } />
+              <Route path="login" element={<Login/>} />
+              <Route path="main" element={ <Main/> } />
+              <Route path="account" element={<Account/>} />
+              <Route path="*" element={<NotFound/>} />
+            </Route>
+          </Routes>   
+      </div>
+    );
+  }
 }
-
-export default App;
