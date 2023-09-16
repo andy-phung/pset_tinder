@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from './firestorm_logo.png';
 import './index.css';
 
 export class Login extends React.Component {
