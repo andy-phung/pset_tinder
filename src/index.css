@@ -32,6 +32,7 @@ button {
   padding-top: 30px;
   padding-left: 55px;
   padding-right: 100px;
+  height: 100vh;
 }
 
 
@@ -83,6 +84,41 @@ button {
   color: #FFFFFF;
   border-style: none;
 }
+
+#About_arrow {
+  padding-top: 75px;
+  background-color: transparent;
+  border-style: none;
+}
+
+.about {
+  background-color: #F8F0E3;
+  height: 100vh;
+}
+
+.column {
+  float: left;
+  text-align: center;
+  padding-top: 95px;
+  width: 33.33%;
+  color: #3f0000;
+}
+
+.description {
+  font-size: 17px;
+  text-align: left;
+  line-height: 28px;
+  padding-left: 75px;
+  padding-right: 50px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 
 /* 
 @media (prefers-reduced-motion: no-preference) {
