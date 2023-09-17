@@ -6,12 +6,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  background-image: url('jasmine_pset.png');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  
 }
 
 html {
@@ -33,6 +27,13 @@ button {
   padding-left: 55px;
   padding-right: 100px;
   height: 100vh;
+}
+
+.home_bg {
+  background-image: url('jasmine_pset.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 #header {
@@ -179,6 +180,56 @@ button {
   clear: both;
 }
 
+/* Main.js styles */
+
+.swipe_bg {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url('firestorm_background.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+#swipe_logo {
+  text-align: center;
+  color: #FFFFFF;
+  padding-top: 1vh;
+  font-size: 17px;
+}
+
+#profile_box {
+  width: 33vw;
+  height: 80vh;
+  border-radius: 25px;
+  background-color: #FFFFFF;
+  display: inline-block;
+}
+
+#swipe_left {
+  float: left;
+  background-color: transparent;
+  border-style: none;
+  padding-top: 28vh;
+  padding-left: 18vw;
+}
+
+#swipe_right {
+  float: right;
+  background-color: transparent;
+  border-style: none;
+  padding-top: 28vh;
+  padding-right: 18vw;
+}
+
+.bio {
+  font-size: 15px;
+  text-align: left;
+  line-height: 1vh;
+  padding-left: 2vw;
+  padding-right: 2vw;
+}
 
 /* 
 @media (prefers-reduced-motion: no-preference) {
