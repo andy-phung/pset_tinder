@@ -42,9 +42,9 @@ export class Home extends React.Component {
             <button type="button" id="Log_In"><b>Log In</b></button>
             <p id="Tagline"><b>Burn through psets. Together.</b></p>
             <center>
-              <button type="button" id="Create_Account">
+              <a href="/register" id="Create_Account">
                 <b>Create Account</b>
-              </button>
+              </a>
             </center>
             <center>
               <button type="button" id="About_arrow" onClick={this.scroll}>
