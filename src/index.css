@@ -114,6 +114,9 @@ button {
 }
 
 #Log_In {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
   float: right;
   border-radius: 25px;
   background: #FFFFFF;
@@ -125,6 +128,9 @@ button {
   margin: 33px;
   border-color:#FFFFFF;
   border-style: none;
+  text-decoration: none;
+  padding-top: 1.75vh;
+  color: #FF5733;
 }
 
 #Tagline {
