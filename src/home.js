@@ -34,7 +34,7 @@ export class Home extends React.Component {
 
   render() {
     return (
-      <div>
+      <div class = "home_bg">
         <div class = "header">
           <header>
             <img id="Home_logo" src={logo} alt = "Firestorm Logo" />

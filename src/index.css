@@ -6,12 +6,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  background-image: url('jasmine_pset.png');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  
 }
 
 html {
@@ -29,10 +23,17 @@ button {
 
 .header {
   /* display: flex; */
-  padding-top: 30px;
+  padding-top: 3vh;
   padding-left: 55px;
   padding-right: 100px;
   height: 100vh;
+}
+
+.home_bg {
+  background-image: url('jasmine_pset.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 #header {
@@ -130,7 +131,7 @@ button {
   text-align: center;
   color: #FFFFFF;
   font-size: 60px;
-  padding-top: 115px;
+  padding-top: 9vh;
 }
 
 #Create_Account {
@@ -146,7 +147,7 @@ button {
 }
 
 #About_arrow {
-  padding-top: 75px;
+  padding-top: 5vh;
   background-color: transparent;
   border-style: none;
   cursor:pointer;
@@ -160,7 +161,7 @@ button {
 .column {
   float: left;
   text-align: center;
-  padding-top: 95px;
+  padding-top: 10vh;
   width: 33.33%;
   color: #3f0000;
 }
@@ -180,6 +181,56 @@ button {
   clear: both;
 }
 
+/* Main.js styles */
+
+.swipe_bg {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url('firestorm_background.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+#swipe_logo {
+  text-align: center;
+  color: #FFFFFF;
+  padding-top: 1vh;
+  font-size: 17px;
+}
+
+#profile_box {
+  width: 33vw;
+  height: 80vh;
+  border-radius: 25px;
+  background-color: #FFFFFF;
+  display: inline-block;
+}
+
+#swipe_left {
+  float: left;
+  background-color: transparent;
+  border-style: none;
+  padding-top: 28vh;
+  padding-left: 18vw;
+}
+
+#swipe_right {
+  float: right;
+  background-color: transparent;
+  border-style: none;
+  padding-top: 28vh;
+  padding-right: 18vw;
+}
+
+.bio {
+  font-size: 15px;
+  text-align: left;
+  line-height: 1vh;
+  padding-left: 2vw;
+  padding-right: 2vw;
+}
 
 /* 
 @media (prefers-reduced-motion: no-preference) {
