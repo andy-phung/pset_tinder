@@ -31,8 +31,13 @@ export class Register extends React.Component {
     
       if (file) {
         //base = reader.readAsDataURL(file);
-        const base = await convertBlobToBase64(someFileData);
+        try {
+          base = await convertBlobToBase64(someFileData);
+        } catch (err) {
+          console.log(err);
+        }
       }
+
       console.log(base);
       console.log("huh");
       const xhr = new XMLHttpRequest();
