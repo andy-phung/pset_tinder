@@ -7,6 +7,7 @@ import FormData from 'form-data';
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import { Navigate } from "react-router-dom";
+import Hashes from "jshashes"
 
 export class Register extends React.Component {
 
@@ -20,9 +21,6 @@ export class Register extends React.Component {
     }
 
   }
-
-  
-
 
 
     //reader.onload = async function(event) {
@@ -50,6 +48,8 @@ export class Register extends React.Component {
 
     console.log(this.image_url);
 
+    var SHA256 = new Hashes.SHA256
+
     db.collection("user-db").add({
       firstname: event.target.elements.firstname.value,
       lastname: event.target.elements.lastname.value,
@@ -59,7 +59,7 @@ export class Register extends React.Component {
       gpa: event.target.elements.gpa.value,
       classes: event.target.elements.classes.value,
       imagelink: this.state.image_url,
-      pw: event.target.elements.pw.value,
+      pw: SHA256.hex(String(event.target.elements.pw.value)),
       bio: event.target.elements.bio.value
     })
     .then((docRef) => {
@@ -157,7 +157,7 @@ export class Register extends React.Component {
     this.setState({image_url: reader.image_url});
   }}/><br/>
         <span>Password:</span><br/>
-        <input type="text" name="pw"/><br/>
+        <input type="password" name="pw"/><br/>
         <div id="submit_container">
           <input type="submit" id="submit_button" value="Submit →" />
         </div>

@@ -39,7 +39,7 @@ export class Home extends React.Component {
           <header>
             <img id="Home_logo" src={logo} alt = "Firestorm Logo" />
             <h1 id="Firestorm_name">Firestorm</h1>
-            <button type="button" id="Log_In"><b>Log In</b></button>
+            <a href="/login" type="button" id="Log_In"><b>Log In</b></a>
             <p id="Tagline"><b>Burn through psets. Together.</b></p>
             <center>
               <a href="/register" id="Create_Account">
