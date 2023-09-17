@@ -131,7 +131,7 @@ button {
   text-align: center;
   color: #FFFFFF;
   font-size: 60px;
-  padding-top: 20vh;
+  padding-top: 9vh;
 }
 
 #Create_Account {
@@ -147,7 +147,7 @@ button {
 }
 
 #About_arrow {
-  padding-top: 10vh;
+  padding-top: 5vh;
   background-color: transparent;
   border-style: none;
   cursor:pointer;
