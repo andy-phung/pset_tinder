@@ -1,12 +1,37 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import logo from './firestorm_logo.png';
 import arrow from './downarrow_button.png';
 import './index.css';
+import { useRef } from 'react';
 
 export class Home extends React.Component {
   constructor(props) {
     super(props);
+    this.intro_ref = React.createRef()
   }
+
+  timeout(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  async componentDidMount() {
+    await this.timeout(100);
+    } 
+
+  
+
+
+  scroll = (event) => {
+    //.current is verification that your element has rendered
+    if(this.intro_ref.current){
+        this.intro_ref.current.scrollIntoView({ 
+           behavior: "smooth", 
+           block: "start", 
+           inline: 'start'
+        })
+    }
+  }
+
   render() {
     // useEffect(() => {
     //   setTimeout(() => divRef.current.scrollIntoView({ behavior: 'smooth' }), 1000);
@@ -25,13 +50,13 @@ export class Home extends React.Component {
               </button>
             </center>
             <center>
-              <button type="button" id="About_arrow">
+              <button type="button" id="About_arrow" onClick={this.scroll}>
                 <img src={arrow} alt = "down_arrow" height="80" width="80"/>
               </button>
             </center>
           </header>
         </div>
-        <div id = "description" class = "about">
+        <div id = "description" class = "about" ref={this.intro_ref}>
           <div class="row">
             <div class="column">
               <h1>What is Firestorm?</h1>
