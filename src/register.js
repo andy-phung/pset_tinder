@@ -9,37 +9,60 @@ export class Register extends React.Component {
   }
   render() {
 
+    const convertBlobToBase64 = async (blob) => {
+      return await blobToBase64(blob);
+    }
+    
+    const blobToBase64 = blob => new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(blob);
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = error => reject(error);
+    });
+
     function previewFile() {
       const preview = document.querySelector("img");
       const file = document.querySelector("input[type=file]").files[0];
+      console.log(file);
       const reader = new FileReader();
-    
-      reader.addEventListener(
-        "load",
-        () => {
-          // convert image file to base64 string
-          preview.src = reader.result;
-        },
-        false,
-      );
+  
+
+      var base = "bleh";
     
       if (file) {
-        const base = reader.readAsDataURL(file);
+        //base = reader.readAsDataURL(file);
+        const base = await convertBlobToBase64(someFileData);
       }
+      console.log(base);
+      console.log("huh");
       const xhr = new XMLHttpRequest();
       xhr.open("POST", "https://jsonplaceholder.typicode.com/todos");
       xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
 
+      const body = JSON.stringify({
+        key: "f152283cb0e579eb5538807d81190463",
+        image: base
+      });
+      xhr.onload = () => {
+        if (xhr.readyState == 4 && xhr.status == 201) {
+          console.log(JSON.parse(xhr.responseText));
+        } else {
+          console.log(`Error: ${xhr.status}`);
+        }
+      };
+      xhr.send(body);
       
     }
 
+
     const handleSubmit = (event) => {
       event.preventDefault();
-      console.log(event.target.elements.firstname.value)
-      console.log(event.target.elements.image.value)
-      console.log(event.srcElement.files[0]) // from elements property
+      //console.log(event.target.elements.firstname.value)
+      //console.log(event.target.elements.image.value)
+      //console.log(event.srcElement.files[0]) // from elements property
       //console.log(event.target.username.value) 
     }
+
 
     return (
       <div id="register_page">
@@ -79,7 +102,7 @@ export class Register extends React.Component {
         <span>Classes (enter as comma-separated list, no spaces):</span><br/>
         <input type="text" name="classes"/><br/>
         <span>Upload a profile picture:</span><br/>
-        <input type="file" name="image" onchange={previewFile}/><br/>
+        <input type="file" name="image" onInput={previewFile}/><br/>
         <div id="submit_container">
           <input type="submit" id="submit_button" value="Submit →" />
         </div>
