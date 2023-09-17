@@ -8,6 +8,8 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import { Navigate } from "react-router-dom";
 import Hashes from "jshashes"
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
+
 
 export class Register extends React.Component {
 
@@ -17,7 +19,8 @@ export class Register extends React.Component {
     this.state = {
       image_url: "",
       submitted: false,
-      authenticated: false
+      authenticated: false,
+      kerb: ""
     }
 
   }
@@ -60,7 +63,10 @@ export class Register extends React.Component {
       classes: event.target.elements.classes.value,
       imagelink: this.state.image_url,
       pw: SHA256.hex(String(event.target.elements.pw.value)),
-      bio: event.target.elements.bio.value
+      bio: event.target.elements.bio.value,
+      elo: 1200,
+      rightswipes: "",
+      match: ""
     })
     .then((docRef) => {
         console.log("Document written with ID: ", docRef.id);
@@ -71,6 +77,9 @@ export class Register extends React.Component {
 
     this.setState({submitted: true});
     this.setState({authenticated: true});
+    this.setState({kerb: event.target.elements.kerb.value});
+
+    //this.props.history.push(this.state);
 
     console.log("form submitted");
 
@@ -110,7 +119,7 @@ export class Register extends React.Component {
             <option value="Next">Next</option>
             <option value="New Vassar">New Vassar</option>
             <option value="Random">Random</option>
-            <option value="Random">Simmons</option>
+            <option value="Simmons">Simmons</option>
         </select><br/>
         <span>GPA:</span><br/>
         <input type="text" name="gpa"/><br/>
@@ -172,4 +181,18 @@ export class Register extends React.Component {
   }
   
 }
+
+export function withRouter(Component) {
+  function ComponentWithRouterProp(props) {
+      const location = useLocation();
+      const navigate = useNavigate();
+      const params = useParams();
+
+      return <Component {...props} router={{ location, navigate, params }} />;
+  }
+
+  return ComponentWithRouterProp;
+}
+
+export default withRouter(Register)
 

@@ -220,6 +220,7 @@ button {
   border-style: none;
   padding-top: 28vh;
   padding-left: 18vw;
+  cursor: pointer;
 }
 
 #swipe_right {
@@ -228,6 +229,7 @@ button {
   border-style: none;
   padding-top: 28vh;
   padding-right: 18vw;
+  cursor: pointer;
 }
 
 .bio {

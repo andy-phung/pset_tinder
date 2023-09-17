@@ -8,6 +8,8 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import { Navigate } from "react-router-dom";
 import Hashes from "jshashes"
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
+
 
 export class Login extends React.Component {
 
@@ -16,7 +18,8 @@ export class Login extends React.Component {
     super(props);
     this.state = {
       submitted: false,
-      authenticated: false
+      authenticated: false,
+      kerb: ""
     }
 
   }
@@ -55,6 +58,7 @@ export class Login extends React.Component {
             if(String(doc.data().pw) === SHA256.hex(String(event.target.elements.pw.value))) {
               this.setState({submitted: true});
               this.setState({authenticated: true});
+              this.setState({kerb: doc.data().kerb});
             }
         });
     })
@@ -72,6 +76,8 @@ export class Login extends React.Component {
     
 
     console.log("form submitted");
+
+    //this.props.history.push(this.state);
 
   
   };
@@ -103,3 +109,16 @@ export class Login extends React.Component {
   
 }
 
+export function withRouter(Component) {
+  function ComponentWithRouterProp(props) {
+      const location = useLocation();
+      const navigate = useNavigate();
+      const params = useParams();
+
+      return <Component {...props} router={{ location, navigate, params }} />;
+  }
+
+  return ComponentWithRouterProp;
+}
+
+export default withRouter(Login)

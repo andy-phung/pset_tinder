@@ -14,7 +14,7 @@ import { Login } from "./login"
 import { Register } from "./register"
 import { Account } from "./account"
 import { Home } from "./home"
-import { Main } from "./main"
+import Main from "./main"
 import { NavBar, NotFound } from "./util"
 
   
