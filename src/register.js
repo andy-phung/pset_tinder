@@ -9,17 +9,6 @@ export class Register extends React.Component {
   }
   render() {
 
-    const convertBlobToBase64 = async (blob) => {
-      return await blobToBase64(blob);
-    }
-    
-    const blobToBase64 = blob => new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(blob);
-      reader.onload = () => resolve(reader.result);
-      reader.onerror = error => reject(error);
-    });
-
     function previewFile() {
       const preview = document.querySelector("img");
       const file = document.querySelector("input[type=file]").files[0];
@@ -31,8 +20,8 @@ export class Register extends React.Component {
     
       if (file) {
         //base = reader.readAsDataURL(file);
-        const base = await convertBlobToBase64(someFileData);
       }
+
       console.log(base);
       console.log("huh");
       const xhr = new XMLHttpRequest();
