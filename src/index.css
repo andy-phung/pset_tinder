@@ -276,3 +276,12 @@ button {
     transform: rotate(360deg);
   }
 } */
+
+#bio {
+  line-height: 12pt;
+}
+
+#pfps {
+  max-width: 70%;
+  height: auto;
+}
