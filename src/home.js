@@ -8,6 +8,9 @@ export class Home extends React.Component {
     super(props);
   }
   render() {
+    // useEffect(() => {
+    //   setTimeout(() => divRef.current.scrollIntoView({ behavior: 'smooth' }), 1000);
+    // });
     return (
       <div>
         <div class = "header">

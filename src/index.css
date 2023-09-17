@@ -70,7 +70,7 @@ button {
   text-align: center;
   color: #FFFFFF;
   font-size: 60px;
-  padding-top: 115px;
+  padding-top: 20vh;
 }
 
 #Create_Account {
@@ -86,7 +86,7 @@ button {
 }
 
 #About_arrow {
-  padding-top: 75px;
+  padding-top: 10vh;
   background-color: transparent;
   border-style: none;
 }
@@ -99,7 +99,7 @@ button {
 .column {
   float: left;
   text-align: center;
-  padding-top: 95px;
+  padding-top: 10vh;
   width: 33.33%;
   color: #3f0000;
 }
