@@ -135,15 +135,21 @@ button {
 }
 
 #Create_Account {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
   text-align: center;
   font-size: 25px;
   border-radius: 25px;
   background: #FF5733;
   padding: 0;
   width: 250px;
-  height: 50px;
+  height: 40px;
   color: #FFFFFF;
   border-style: none;
+  text-decoration: none;
+  padding-top: 1.75vh;
+  
 }
 
 #About_arrow {
