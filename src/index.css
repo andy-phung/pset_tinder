@@ -47,6 +47,7 @@ button {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  height: 100vh;
 }
 
 #register_form {
